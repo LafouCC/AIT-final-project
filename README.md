@@ -65,7 +65,7 @@ An Example List with Lora model:
 
 /home - homepage
 
-<img src="documentation/home.png" alt="home" width="250px">
+![list](documentation/home.png)
 
 /explore - image/model recommendation based on user preference and input
 
