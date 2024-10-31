@@ -1,0 +1,13 @@
+{
+  "name": "final-project-lafoucc",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "With the rise of AI-generated art, platforms like Civitai have become go-to sources for unique, artist-created images and models. This project uses data scraped from Civitai to make it easy to explore and discover both images and LoRA models in a natural, chat-based interface. The app learns your preferences over time to recommend images and LoRA models that align with your interests.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
