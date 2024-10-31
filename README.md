@@ -53,32 +53,32 @@ An Example List with Lora model:
 
 / - root page
 
-<img src="documentation/root.png" alt="root" width="250px">
+<img src="documentation/root.png" alt="root" width="600px">
 
 /register - page for user register 
 
-<img src="documentation/register.png" alt="register" width="250px">
+<img src="documentation/register.png" alt="register" width="600px">
 
 /login - page for login
 
-<img src="documentation/login.png" alt="login" width="250px">
+<img src="documentation/login.png" alt="login" width="600px">
 
 /home - homepage
 
-![list](documentation/home.png)
+<img src="documentation/home.png" alt="home" width="600px">
 
 /explore - image/model recommendation based on user preference and input
 
-<img src="documentation/explore.png" alt="explore" width="250px">
+<img src="documentation/explore.png" alt="explore" width="600px">
 
 /favorite - user favoratire lists
 
-<img src="documentation/favorite.png" alt="favorite" width="250px">
+<img src="documentation/favorite.png" alt="favorite" width="600px">
 
 
 ## Site map
 
-<img src="documentation/sitemap.png" alt="favorite" width="300px">
+<img src="documentation/sitemap.png" alt="favorite" width="600px">
 
 ## User Stories / Use Cases
 
