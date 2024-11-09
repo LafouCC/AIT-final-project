@@ -11,20 +11,24 @@ You must register to use the web app
 
 URL for deployed site 
 ---
-(TODO: add url for your dpeloyed site; should be in this format http://linserv1.cims.nyu.edu:31472)
+(http://linserv1.cims.nyu.edu:31472)
 
 URL for form 
 ---
-(TODO: add link to a functioning form)
+/home
+/register
+/login
 
 URL for form result
 ---
-(TODO: if applicable, add link to page that shows results of submitting form)
+if logined, will keep track of user preference within session, and will add user info into the database
+[app.mjs](./src/app.mjs)
 
 URL to github that shows line of code where research topic(s) are used / implemented
 --- 
-(TODO: add link to github url that shows line or lines of code that demonstrate in progress work on at least one research topic)
+[migrateData.mjs](./src/scripts/migrateData.mjs)
 
 References 
 ---
-(TODO: if applicable, links to annotated lines of code in github repository that were based off of tutorials / articles / sample projects)
+https://medium.com/@ManishChablani/getting-started-with-image-recommendation-a-simplified-approach-to-zero-shot-semantic-similarity-b64534e3107f
+https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-type/
