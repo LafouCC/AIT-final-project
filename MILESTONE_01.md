@@ -15,9 +15,9 @@ URL for deployed site
 
 URL for form 
 ---
-/home
-/register
-/login
+(http://linserv1.cims.nyu.edu:31472/home)
+(http://linserv1.cims.nyu.edu:31472/register)
+(http://linserv1.cims.nyu.edu:31472/login)
 
 URL for form result
 ---
