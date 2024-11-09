@@ -3,7 +3,7 @@ Milestone 02
 
 Repository Link
 ---
-(TODO: add the link to your repository in github, such as, https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-LafouCC)
+https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-LafouCC
 
 Special Instructions for Using Form and / or Login
 ---
