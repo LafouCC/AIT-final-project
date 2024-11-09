@@ -30,6 +30,7 @@ An Example List with Image:
 {
   url: // a url link to where the image is stored (aws S3)
   tags://image tag
+  embedding: //image embedding
   createdBy: // author of the image,
   lora: //reference to lora model used
   //other image metadata
@@ -99,7 +100,7 @@ An Example List with Lora model:
   * Bootstrap
   * Semantic UI
 * (6 points) Use a front-end framework
-    * used vue.js as the frontend framework
+    * used Next.js as the frontend+backend framework for the real-time recommendation
 * (1 - 6 points) Use a server-side JavaScript library or module
     * planning to use similarity module as the backend recommendation algorithm
 
@@ -109,4 +110,6 @@ An Example List with Lora model:
 
 1. [passport.js authentication docs](http://passportjs.org/docs)
 2. [tutorial on vue.js](https://vuejs.org/v2/guide/) 
+3. https://medium.com/@ManishChablani/getting-started-with-image-recommendation-a-simplified-approach-to-zero-shot-semantic-similarity-b64534e3107f
+4. https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-type/
 
