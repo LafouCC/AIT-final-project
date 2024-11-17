@@ -4,6 +4,7 @@ import Login from './Routers/Login';
 import Register from './Routers/Register';
 import Home from './Routers/Home';
 import { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -22,7 +23,7 @@ const App = () => {
         <Route path="/home" element={<Home setUser={setUser} user={user}/>} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/register" element={<Register setUser={setUser} />} />
-        <Route path="/" element={<Home setUser={setUser} user={user}/>} />
+        <Route path="/" element={<Navigate to="/home" />} />
       </Routes>
     </Router>
   );

@@ -4,12 +4,16 @@ import * as auth from './auth.mjs';
 import sanitize from 'mongo-sanitize';
 import session from 'express-session';
 import cors from 'cors';
-
+import url from 'url';
+import path from 'path';
 
 const loginMessages = {"PASSWORDS DO NOT MATCH": 'Incorrect password', "USER NOT FOUND": 'User doesn\'t exist'};
 const registrationMessages = {"USERNAME ALREADY EXISTS": "Username already exists", "USERNAME PASSWORD TOO SHORT": "Username or password is too short"};
 
 const app = express();
+const __dirname=path.dirname(url.fileURLToPath(import.meta.url));
+const __root=path.resolve(__dirname, '..', '..');
+app.use(express.static(path.join(__root, 'frontend/build')));
 
 app.use(session({
   secret: 'secret',
@@ -86,6 +90,11 @@ app.post('/api/logout', async (req, res) => {
   res.json({ message: 'Logged out' });
 });
 
-app.listen(3001);
-// app.listen(parseInt(process.env.PORT) ?? 3001);
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__root, 'frontend', 'build', 'index.html'));
+});
+
+console.log('Listening on port', process.env.PORT);
+app.listen(process.env.PORT);
+// app.listen(3001);
 

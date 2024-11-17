@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setUser }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const API_URL = process.env.REACT_APP_API_URL;
-
+  const navigate = useNavigate();
+  
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    
     try {
       const response = await fetch(`${API_URL}/api/login`, {
         method: 'POST',
@@ -20,7 +22,7 @@ const Login = ({ setUser }) => {
       if (data.user) {
         setUser(data.user); // Set user session in frontend state
         localStorage.setItem('user', JSON.stringify(data.user));
-        window.location.href = '/home'; // Redirect to home
+        navigate('/home');  // Redirect to home
       }else{
         setError(data.message);
       }
