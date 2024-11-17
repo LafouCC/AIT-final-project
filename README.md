@@ -95,12 +95,7 @@ An Example List with Lora model:
 10. **As a user**, I can log out of the site securely.
 
 ## Research Topics
-* (2 points) Use a CSS framework or UI toolkit
-  * tailwind.css
-  * Bootstrap
-  * Semantic UI
-* (6 points) Use a front-end framework
-    * used Next.js as the frontend+backend framework for the real-time recommendation
+* (6 points) Use React as front-end framework for real-time recommendation
 * (1 - 6 points) Use a server-side JavaScript library or module
     * planning to use similarity module as the backend recommendation algorithm
 
