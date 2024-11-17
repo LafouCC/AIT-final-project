@@ -2,6 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 import dotenv from 'dotenv';
 
 dotenv.config({ path: '../.env' });
+// console.log(process.env.DSN);
 mongoose.connect(process.env.DSN);
 
 const UserSchema = new Schema({

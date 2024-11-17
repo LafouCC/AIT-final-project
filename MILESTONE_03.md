@@ -3,32 +3,35 @@ Milestone 03
 
 Repository Link
 ---
-(TODO: add the link to your repository in github, such as, https://github.com/[COURSE]/[REPO_NAME])
+https://github.com/nyu-csci-ua-0467-001-002-fall-2024/final-project-LafouCC
 
 URL for deployed site 
 ---
-(TODO: add url for your dpeloyed site; should be in this format http://linserv1.cims.nyu.edu:YOUR_PORT_NUMBER)
+http://linserv1.cims.nyu.edu:31472
 
 URL for form 1 (from previous milestone) 
 ---
-(TODO: add link to a functioning form)
+http://linserv1.cims.nyu.edu:31472/home
 
 Special Instructions for Form 1
 ---
-(TODO: if your app requires special instructions to use or if your app requires authentication, add information here; otherwise, leave blank)
+type inside the text input box to search (still need to implement the backend logic)
 
 URL for form 2 (for current milestone)
 ---
-(TODO: if applicable, add link to page that shows results of submitting form)
+http://linserv1.cims.nyu.edu:31472/register
+http://linserv1.cims.nyu.edu:31472/login
 
 Special Instructions for Form 2
 ---
-(TODO: if your app requires special instructions to use or if your app requires authentication, add information here; otherwise, leave blank)
+login and register, username and password longer than 3 letters
 
 URL(s) to github repository with commits that show progress on research
 --- 
-(TODO: add link to github url that shows line or lines of code that demonstrate continued progress on research topics)
+[frontend/src/App.js](frontend/src/App.js)
+[frontend/src/Routers](frontend/src/Routers)
 
 References 
 ---
-(TODO: if applicable, links to annotated lines of code in github repository that were based off of tutorials / articles / sample projects)
+[React tutorial](https://react.dev/learn)
+[React Routers](https://hygraph.com/blog/routing-in-react)

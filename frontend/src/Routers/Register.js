@@ -4,12 +4,13 @@ const Register = ({ setUser }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3001/api/register', {
+      const response = await fetch(`${API_URL}/api/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ username, password }),

@@ -27,7 +27,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/api/home', async (req, res) => {
-  console.log('Hit /home endpoint')
+  // console.log('Hit /home endpoint')
   try {
     const randomImages = await Image.aggregate([{ $sample: { size: 12 } }]);
     res.json({images:randomImages});//a list of images (dic)
@@ -81,8 +81,9 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-app.get('/api/logout', async (req, res) => {
+app.post('/api/logout', async (req, res) => {
   await auth.endAuthenticatedSession(req);
+  res.json({ message: 'Logged out' });
 });
 
 app.listen(3001);

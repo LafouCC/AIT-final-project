@@ -3,16 +3,19 @@ import '../App.css';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+
+
 const Home = ({setUser, user}) => {
+  const API_URL = process.env.REACT_APP_API_URL;
   const [searchInput, setSearchInput] = useState('');
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log(user);
+  // console.log(user);
   // Fetch random images on load
   useEffect(() => {
     const fetchRandomImages = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/home');
+        const response = await fetch(`${API_URL}/api/home`);
         const data = await response.json();
         console.log(data);
         setImages(data.images);
@@ -43,7 +46,7 @@ const Home = ({setUser, user}) => {
     if (loading) return; // Prevent multiple requests while loading
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:3001/api/home`);
+      const response = await fetch(`${API_URL}/api/home`);
       const data = await response.json();
       setImages(prevImages => [...prevImages, ...data.images]); // Append new images to the existing list
     } catch (error) {
@@ -55,7 +58,7 @@ const Home = ({setUser, user}) => {
 
   const handleSearch = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/search?query=${encodeURIComponent(searchInput)}`);
+      const response = await fetch(`${API_URL}/api/search?query=${encodeURIComponent(searchInput)}`);
       const data = await response.json();
       setImages(data.images);
     } catch (error) {
@@ -69,10 +72,12 @@ const Home = ({setUser, user}) => {
 
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:3001/api/logout', {
+      const response=await fetch(`${API_URL}/api/logout`, {
         method: 'POST',
       });
-  
+      const data=await response.json();
+      console.log(data.message);
+
       setUser(null); // Clear user state
       localStorage.removeItem('user'); // Remove user from localStorage
     } catch (err) {
