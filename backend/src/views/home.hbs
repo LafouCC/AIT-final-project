@@ -1,0 +1,25 @@
+<!-- views/home.hbs -->
+<h1>Image Recommendation</h1>
+<a href="/register">Register</a> or <a href="/login">Login</a>
+<form action="/home" method="GET">
+  <div class="mb-3">
+    <label for="queryText" class="form-label">Enter your search text</label>
+    <input type="text" class="form-control" id="queryText" name="queryText" value="{{userInput}}" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{{#if image}}
+  <h2>Recommended Image</h2>
+  <div class="image-container">
+    <img src="{{image.url}}" alt="Random Image" class="img-fluid" />
+    <p>Tags: {{image.tags}}</p>
+    <p>Author: {{image.username}}</p>
+  </div>
+{{/if}}
+
+{{#if error}}
+  <div>
+    {{error}}
+  </div>
+{{/if}}
