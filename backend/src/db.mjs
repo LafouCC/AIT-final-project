@@ -31,6 +31,8 @@ const ImageSchema = new Schema({
 //   description: { type: String }, // Description of the model
 //   createdAt: { type: Date, default: Date.now } // Metadata for model creation date
 // });
+
+ImageSchema.index({ tags: 'text', imageEmbed: '2dsphere' });
   
 const User = mongoose.model('User', UserSchema);
 const Image = mongoose.model('Image', ImageSchema);

@@ -6,6 +6,14 @@ import session from 'express-session';
 import cors from 'cors';
 import url from 'url';
 import path from 'path';
+import { AutoTokenizer, CLIPTextModelWithProjection } from '@huggingface/transformers'; 
+let tokenizer, processor, model;
+
+(async () => {
+  tokenizer = await AutoTokenizer.from_pretrained('Xenova/clip-vit-base-patch16');
+  model = await CLIPTextModelWithProjection.from_pretrained('Xenova/clip-vit-base-patch16');
+})();
+
 
 const loginMessages = {"PASSWORDS DO NOT MATCH": 'Incorrect password', "USER NOT FOUND": 'User doesn\'t exist'};
 const registrationMessages = {"USERNAME ALREADY EXISTS": "Username already exists", "USERNAME PASSWORD TOO SHORT": "Username or password is too short"};
@@ -30,6 +38,8 @@ app.use(cors());
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
 
+//initialize the pipeline
+
 app.get('/api/home', async (req, res) => {
   // console.log('Hit /home endpoint')
   try {
@@ -47,8 +57,31 @@ app.get('/api/search', async (req, res) => {
   if (!query) return res.status(400).json({ error: 'Query is required.' });
 
   try {
-    const randomImages = await Image.aggregate([{ $sample: { size: 12 } }]);
-    res.json({images:randomImages});
+    const text_inputs = tokenizer(query, { padding: true, truncation: true });
+    const text_embeddings = await model(text_inputs); // Get the text embeddings from the model
+    console.log(text_embeddings);
+    const queryEmbedding=Array.from(text_embeddings.text_embeds.ort_tensor.cpuData);
+    const cursor = await Image.aggregate([
+      {
+        "$vectorSearch": {
+          "index": "default",
+          "path": "imageEmbed",
+          "queryVector": queryEmbedding,
+          "numCandidates": 990,
+          "limit": 100
+        }
+      },
+      {
+        "$project": {
+          "_id": 1,
+          "url": 1,
+          "score": { "$meta": "vectorSearchScore" }
+        } //to do: add more fields
+      }
+    ]);
+
+    res.json({images:cursor});
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Search failed.' });
@@ -95,6 +128,6 @@ app.get('*', (req, res) => {
 });
 
 console.log('Listening on port', process.env.PORT);
-app.listen(process.env.PORT);
-// app.listen(3001);
+// app.listen(process.env.PORT);
+app.listen(3001);
 
