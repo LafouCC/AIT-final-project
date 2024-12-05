@@ -128,6 +128,6 @@ app.get('*', (req, res) => {
 });
 
 console.log('Listening on port', process.env.PORT);
-// app.listen(process.env.PORT);
-app.listen(3001);
+app.listen(process.env.PORT);
+// app.listen(3001);
 
