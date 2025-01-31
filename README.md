@@ -1,4 +1,4 @@
-# Image Recommendation System 
+# Image Search System 
 
 ## Overview
 
