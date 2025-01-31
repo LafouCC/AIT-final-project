@@ -99,8 +99,6 @@ An Example List with Lora model:
 * (1 - 6 points) Use a server-side JavaScript library or module
     * planning to use similarity module as the backend recommendation algorithm
 
-## [Link to Initial Main Project File](src/app.mjs) 
-
 ## Annotations / References Used
 
 1. [passport.js authentication docs](http://passportjs.org/docs)
